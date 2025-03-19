@@ -6,6 +6,7 @@ import EducationSection from '@/components/EducationSection';
 import ContactInfo from '@/components/ContactInfo';
 import Header from '@/components/Header';
 import { useState, useEffect } from 'react';
+import Resume from '@/components/Resume';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('');
@@ -77,9 +78,18 @@ export default function Home() {
           <EducationSection />
         </section>
 
+        <hr className="border-t-2 border-gray-800 my-12" />
+
         <section id="experience" className="mb-16">
           <ExperienceSection />
         </section>
+
+        <hr className="border-t-2 border-gray-800 my-12" />
+
+        <section id="resume" className="mb-16">
+          <Resume />
+        </section>
+        <hr className="border-t-2 border-gray-800 my-12" />
 
         <section id="projects" className="mb-20">
           <ProjectsSection />
