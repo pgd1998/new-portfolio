@@ -57,23 +57,23 @@ export default function Home() {
 
       <main className="flex-grow">
         <section id="about" className="mb-16">
-          <p className="max-w-2xl mb-6">
-            I'm a software engineer passionate about creating accessible, pixel-perfect user
-            interfaces that blend thoughtful design with robust engineering. My favorite
-            work lies at the intersection of design and development, creating experiences
-            that not only look great but are meticulously built for performance and usability.
-          </p>
-          <p className="max-w-2xl mb-6">
-            Currently, I'm a Research Assistant (Software Developer) at the University of Melbourne, 
-            where I contribute to the creation and maintenance of the components that power 
-            the Rephrame platform, ensuring our software meets web accessibility standards and best 
-            practices to deliver an inclusive user experience.
-          </p>
-          <p className="max-w-2xl mb-12">
-            In the past, I've had the opportunity to develop software across a variety of
-            settings — from advertising agencies and large corporations to start-ups and
-            small digital product studios.
-          </p>
+        <p className="max-w-2xl mb-6">
+          I&#39;m a software engineer passionate about creating accessible, pixel-perfect user
+          interfaces that blend thoughtful design with robust engineering. My favorite
+          work lies at the intersection of design and development, creating experiences
+          that not only look great but are meticulously built for performance and usability.
+        </p>
+        <p className="max-w-2xl mb-6">
+          Currently, I&#39;m a Research Assistant (Software Developer) at the University of Melbourne, 
+          where I contribute to the creation and maintenance of the components that power 
+          the Rephrame platform, ensuring our software meets web accessibility standards and best 
+          practices to deliver an inclusive user experience.
+        </p>
+        <p className="max-w-2xl mb-12">
+          In the past, I&#39;ve had the opportunity to develop software across a variety of
+          settings — from advertising agencies and large corporations to start-ups and
+          small digital product studios.
+        </p>
           
           <EducationSection />
         </section>

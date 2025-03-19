@@ -85,7 +85,7 @@ const ExperienceSection: React.FC = () => {
               Ensured data integrity and security by implementing advanced data management practices with Firestore and Realtime Database, achieving 99% data accuracy.
             </p>
             <p>
-              Integrated real-time communication tools using the 100ms SDK, facilitating secure video consultations and enhancing the platform's ability to exchange patient information.
+              Integrated real-time communication tools using the 100ms SDK, facilitating secure video consultations and enhancing the platform&#39;s ability to exchange patient information.
             </p>
           </div>
         }
