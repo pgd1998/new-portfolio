@@ -19,7 +19,6 @@ export default function Home() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          
           if (rect.top <= 150 && rect.bottom >= 150) {
             setActiveSection(section);
             break;
@@ -29,7 +28,7 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -66,7 +65,7 @@ export default function Home() {
         <p className="max-w-2xl mb-6">
           Currently, I&#39;m a Research Assistant (Software Developer) at the University of Melbourne, 
           where I contribute to the creation and maintenance of the components that power 
-          the Rephrame platform, ensuring our software meets web accessibility standards and best 
+          the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best 
           practices to deliver an inclusive user experience.
         </p>
         <p className="max-w-2xl mb-12">
@@ -100,8 +99,8 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-6">
           <SocialLinks />
           <div className="text-sm text-gray-400">
-            <p>Loosely designed in <span className="text-gray-300">Figma</span> and coded in <span className="text-gray-300">VS Code</span></p>
             <p>Built with <span className="text-gray-300">Next.js</span> and <span className="text-gray-300">Tailwind CSS</span>, deployed with <span className="text-gray-300">Vercel</span></p>
+            <p>Coded in <span className="text-gray-300">VS Code</span></p>
           </div>
         </div>
       </footer>

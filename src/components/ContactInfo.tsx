@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactInfo: React.FC = () => {
+const ContactInfo = () => {
   return (
     <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-8 text-gray-400 mb-8">
       <div className="flex items-center gap-2">

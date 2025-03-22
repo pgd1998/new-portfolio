@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import SkillTag from './SkillTag';
+import Link from 'next/link';
 
 type ProjectProps = {
   title: string;
@@ -11,14 +12,14 @@ type ProjectProps = {
   year?: string;
 };
 
-const ProjectCard: React.FC<ProjectProps> = ({
+const ProjectCard= ({
   title,
   description,
   skills,
   image,
   link,
   year
-}) => {
+}:ProjectProps) => {
   return (
     <div className="mb-14">
       {year && <div className="text-gray-400 mb-1">{year}</div>}
@@ -55,7 +56,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   );
 };
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection = () => {
   return (
     <div>
       <br/>

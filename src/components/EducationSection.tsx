@@ -7,12 +7,12 @@ type EducationItemProps = {
   period?: string;
 };
 
-const EducationItem: React.FC<EducationItemProps> = ({
+const EducationItem = ({
   degree,
   institution,
   location,
   period,
-}) => {
+}:EducationItemProps) => {
   return (
     <div className="mb-6">
       <h3 className="text-lg font-semibold">{degree}</h3>
@@ -22,7 +22,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   );
 };
 
-const EducationSection: React.FC = () => {
+const EducationSection = () => {
   return (
     <div className="mb-16">
       <br/>

@@ -10,14 +10,14 @@ type ExperienceProps = {
   skills: string[];
 };
 
-const ExperienceItem: React.FC<ExperienceProps> = ({
+const ExperienceItem = ({
   period,
   title,
   company,
   companyLink,
   description,
   skills,
-}) => {
+}:ExperienceProps) => {
   return (
     <div className="mb-14">
       <div className="text-gray-400 mb-1">{period}</div>
@@ -45,7 +45,7 @@ const ExperienceItem: React.FC<ExperienceProps> = ({
   );
 };
 
-const ExperienceSection: React.FC = () => {
+const ExperienceSection = () => {
   return (
     <div>
       {/* <h2 className="sr-only">Experience</h2> */}

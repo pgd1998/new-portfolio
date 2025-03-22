@@ -1,4 +1,4 @@
-const Resume=()=>{
+const Resume = ()=>{
     return(
         <div className="mt-8">
             <a

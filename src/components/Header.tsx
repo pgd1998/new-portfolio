@@ -5,7 +5,7 @@ type HeaderProps = {
   activeSection?: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ activeSection }) => {
+  const Header=({activeSection}:HeaderProps)=>{
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
