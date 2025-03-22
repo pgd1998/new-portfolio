@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import SkillTag from './SkillTag';
-import Link from 'next/link';
 
 type ProjectProps = {
   title: string;
