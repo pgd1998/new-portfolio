@@ -53,7 +53,7 @@ const ExperienceSection = () => {
       <h2 className="text-2xl font-semibold mb-6">Experience</h2>
       
       <ExperienceItem
-        period="2023 — PRESENT"
+        period="2023  -  PRESENT"
         title="Research Assistant (Software Developer)"
         company="University of Melbourne"
         description={
@@ -73,7 +73,7 @@ const ExperienceSection = () => {
       />
 
       <ExperienceItem
-        period="2023 — 2024"
+        period="2023  -  2024"
         title="Application Developer Intern"
         company="InflaMed Pty Ltd"
         description={
@@ -93,7 +93,7 @@ const ExperienceSection = () => {
       />
 
       <ExperienceItem
-        period="2020 — 2022"
+        period="2020  -  2022"
         title="Software Engineer"
         company="Accenture Solutions"
         description={

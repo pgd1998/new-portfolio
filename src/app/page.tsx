@@ -70,7 +70,7 @@ export default function Home() {
         </p>
         <p className="max-w-2xl mb-12">
           In the past, I&#39;ve had the opportunity to develop software across a variety of
-          settings — from advertising agencies and large corporations to start-ups and
+          settings  -  from advertising agencies and large corporations to start-ups and
           small digital product studios.
         </p>
           
