@@ -103,6 +103,16 @@ const ProjectsSection = () => {
         }
         skills={["React", "Node.js", "MongoDB", "Express", "RESTful API", "JWT", "Material UI"]}
       />
+
+      <ProjectCard
+        title="Resource Monitoring"
+        description={
+          <p>
+            Created Bash scripts to monitor server resources (CPU, memory, disk space) for e-commerce website and implemented email alert system for threshold violations, improving platform reliability by 35%.         
+          </p>
+        }
+        skills={["Bash Scripting", "Linux Server Administration", "Alerting Mechanisms", "Automation"]}
+      />
       
       <ProjectCard
         title="Music Events System Project"
