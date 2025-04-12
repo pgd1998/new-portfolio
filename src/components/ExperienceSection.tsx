@@ -79,18 +79,19 @@ const ExperienceSection = () => {
         description={
           <div className="space-y-2">
             <p>
-              Enhanced clinician efficiency by designing and developing a robust clinician-side web application using TypeScript, React, and Next.js, improving patient monitoring and management capabilities by 40%.
+              Built a full-stack, clinician-focused health-tech application using <strong>Next.js</strong>, <strong>TypeScript</strong>, <strong>Material UI</strong>, <strong>Python</strong>, and <strong>Django</strong>, achieving a <strong>35% improvement</strong> in clinical workflow efficiency and deployed securely on <strong>AWS</strong>.
             </p>
             <p>
-              Ensured data integrity and security by implementing advanced data management practices with Firestore and Realtime Database, achieving 99% data accuracy.
+              Ensured compliance with <strong>FHIR standards</strong> and maintained <strong>99% data accuracy</strong> by managing real-time healthcare data using <strong>Firebase Realtime Database</strong>, supporting reliable patient record access.
             </p>
             <p>
-              Integrated real-time communication tools using the 100ms SDK, facilitating secure video consultations and enhancing the platform&#39;s ability to exchange patient information.
+              Conducted user acceptance testing with clinicians and patients; integrated <strong>100ms SDK</strong> for secure video consultations and developed a live transcription feature, reducing documentation time by <strong>50%</strong> and boosting user satisfaction by <strong>25%</strong>.
             </p>
           </div>
         }
-        skills={["TypeScript", "React", "Next.js", "Firebase", "Material UI", "100ms", "Terraform"]}
+        skills={["Next.js", "TypeScript", "Material UI", "Python", "Django", "Firebase", "AWS", "100ms", "FHIR"]}
       />
+
 
       <ExperienceItem
         period="2020  -  2022"
