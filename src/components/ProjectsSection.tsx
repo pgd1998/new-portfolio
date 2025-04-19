@@ -25,7 +25,7 @@ const ProjectCard= ({
       
       <h3 className="text-xl font-semibold flex items-center gap-1 mb-2">
         {link ? (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href={link} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline">
             {title} <span className="inline-block ml-1">→</span>
           </a>
         ) : (

@@ -22,7 +22,7 @@ const ExperienceItem = ({
     <div className="mb-14">
       <div className="text-gray-400 mb-1">{period}</div>
       <h3 className="text-xl font-semibold flex items-center gap-1 mb-1">
-        {title} {company && (
+        <div>{title} </div> {company && (
           <>
             <span className="mx-2">·</span>
             {companyLink ? (
@@ -59,17 +59,42 @@ const ExperienceSection = () => {
         description={
           <div className="space-y-2">
             <p>
-              Drove the development and design of Rephrame, a cutting-edge software tool for building designers to assess embodied carbon, energy, and water, leading to a 50% increase in assessment efficiency.
-            </p>
-            <p>
-              Led the front-end development using JavaScript and Tailwind CSS, creating an intuitive and visually appealing user interface that improved user satisfaction by 40%.
-            </p>
-            <p>
-              Implemented interactive data visualizations with Plotly Dash, enhancing the user experience and enabling more insightful assessments.
-            </p>
-          </div>
+                Led development of <strong>Nested Phoenix</strong>, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.
+              </p>
+              <p>
+                Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.
+              </p>
+              <p>
+                Also developed <strong>Rephrame</strong>, a tool for assessing embodied carbon and water use in buildings, improving efficiency of assessments by 50%.
+              </p>
+              <p>
+                Managed deployment and CI/CD pipelines, halving release times while ensuring system reliability.
+              </p>
+        </div>
+
         }
         skills={["JavaScript", "Flask", "Python", "Tailwind CSS", "Plotly Dash", "REST API", "Firebase"]}
+      />
+
+<ExperienceItem
+        period="2020  -  2022"
+        title="Software Engineer"
+        company="Accenture Solutions"
+        description={
+          <div className="space-y-2">
+             <p>
+        Spearheaded the development of a Customer Care System for a global client, reducing response time by 40% and boosting satisfaction scores by 25%.
+      </p>
+      <p>
+        Enhanced user experience through intuitive front-end features and optimized API performance and database scalability on the back end.
+      </p>
+      <p>
+        Streamlined deployment processes via CI/CD pipelines, cutting release times by 50% and improving delivery efficiency.
+      </p>
+          </div>
+
+        }
+        skills={["JavaScript", "React", "Node", "Express", "AWS", "Tailwind", "MongoDB", "Gulp"]}
       />
 
       <ExperienceItem
@@ -79,39 +104,21 @@ const ExperienceSection = () => {
         description={
           <div className="space-y-2">
             <p>
-              Built a full-stack, clinician-focused health-tech application using <strong>Next.js</strong>, <strong>TypeScript</strong>, <strong>Material UI</strong>, <strong>Python</strong>, and <strong>Django</strong>, achieving a <strong>35% improvement</strong> in clinical workflow efficiency and deployed securely on <strong>AWS</strong>.
-            </p>
-            <p>
-              Ensured compliance with <strong>FHIR standards</strong> and maintained <strong>99% data accuracy</strong> by managing real-time healthcare data using <strong>Firebase Realtime Database</strong>, supporting reliable patient record access.
-            </p>
-            <p>
-              Conducted user acceptance testing with clinicians and patients; integrated <strong>100ms SDK</strong> for secure video consultations and developed a live transcription feature, reducing documentation time by <strong>50%</strong> and boosting user satisfaction by <strong>25%</strong>.
-            </p>
+        Developed a full-stack health-tech platform tailored for clinicians, increasing workflow efficiency by 35% and deploying securely on cloud infrastructure.
+      </p>
+      <p>
+        Integrated real-time healthcare data features while ensuring FHIR compliance and maintaining 99% data accuracy.
+      </p>
+      <p>
+        Delivered secure video consultations and live transcription, reducing documentation time by 50% and enhancing user satisfaction by 25%.
+      </p>
           </div>
         }
         skills={["Next.js", "TypeScript", "Material UI", "Python", "Django", "Firebase", "AWS", "100ms", "FHIR"]}
       />
 
 
-      <ExperienceItem
-        period="2020  -  2022"
-        title="Software Engineer"
-        company="Accenture Solutions"
-        description={
-          <div className="space-y-2">
-            <p>
-              Developed a high-performance front-end for a Restaurant Booking Service web application using JavaScript and React, leading to a 30% increase in user engagement and satisfaction.
-            </p>
-            <p>
-              Led the full-stack development of a Customer Care Software System for an international client, resulting in a 40% reduction in customer response time.
-            </p>
-            <p>
-              Deployed the application on AWS and set up a CI/CD pipeline, which streamlined the deployment process and reduced release times by 50%.
-            </p>
-          </div>
-        }
-        skills={["JavaScript", "React", "Node", "Express", "AWS", "Tailwind", "MongoDB", "Gulp"]}
-      />
+      
     </div>
   );
 };
