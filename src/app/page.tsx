@@ -130,19 +130,19 @@ export default function Home() {
               
               <div className="md:w-2/3 space-y-6">
                 <p>
-                  I&aposm a software engineer passionate about creating accessible, pixel-perfect user
+                  I&apos;m a software engineer passionate about creating accessible, pixel-perfect user
                   interfaces that blend thoughtful design with robust engineering. My favorite
                   work lies at the intersection of design and development, creating experiences
                   that not only look great but are meticulously built for performance and usability.
                 </p>
                 <p>
-                  Currently, I&aposm a Research Assistant (Software Developer) at the University of Melbourne, 
+                  Currently, I&apos;m a Research Assistant (Software Developer) at the University of Melbourne, 
                   where I contribute to the creation and maintenance of the components that power 
                   the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best 
                   practices to deliver an inclusive user experience.
                 </p>
                 <p>
-                  In the past, I&aposve had the opportunity to develop software across a variety of
+                  In the past, I&apos;ve had the opportunity to develop software across a variety of
                   settings — from advertising agencies and large corporations to start-ups and
                   small digital product studios.
                 </p>
