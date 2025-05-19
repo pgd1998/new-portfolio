@@ -1,15 +1,14 @@
-const Resume = ()=>{
-    return(
-        <div className="mt-8">
-            <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition">                    
-                View Full Resume
-                </a>
-        </div>
-    )
-}
-
-export default Resume;
+const Resume = () => {
+    return (
+      <a 
+        href="/resume.pdf" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-5 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors inline-block"
+      >
+        Resume
+      </a>
+    );
+  };
+  
+  export default Resume;

@@ -5,7 +5,7 @@ type HeaderProps = {
   activeSection?: string;
 };
 
-  const Header=({activeSection}:HeaderProps)=>{
+const Header = ({ activeSection }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,99 +22,69 @@ type HeaderProps = {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
-    <header className={`py-6 transition-all duration-300 ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 px-8 md:px-20 lg:px-24' : ''}`}>
-      <div className="flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
-          Poorvith Gowda
-        </Link>
-
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <Link 
-            href="#about" 
-            className={`nav-link ${activeSection === 'about' ? 'active-link' : ''}`}
-          >
-            ABOUT
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-sm border-b border-gray-800' : ''}`}>
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold">
+            PG
           </Link>
-          <Link 
-            href="#experience" 
-            className={`nav-link ${activeSection === 'experience' ? 'active-link' : ''}`}
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {['ABOUT', 'EXPERIENCE', 'PROJECTS'].map((item) => (
+              <Link 
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className={`relative px-1 py-2 transition-colors ${
+                  activeSection === item.toLowerCase() ? 'text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <span>{item}</span>
+                <span 
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transform origin-left transition-transform duration-300 ${
+                    activeSection === item.toLowerCase() ? 'scale-x-100' : 'scale-x-0'
+                  }`}
+                />
+              </Link>
+            ))}
+          </nav>
+          
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            EXPERIENCE
-          </Link>
-          <Link 
-            href="#projects" 
-            className={`nav-link ${activeSection === 'projects' ? 'active-link' : ''}`}
-          >
-            PROJECTS
-          </Link>
-        </nav>
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-white transform transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-full h-0.5 bg-white transition-opacity ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`w-full h-0.5 bg-white transform transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
+          </button>
+        </div>
+      </header>
 
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden text-white focus:outline-none"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            {isMobileMenuOpen ? (
-              <>
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </>
-            ) : (
-              <>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </>
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile navigation */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <nav className="mt-4 md:hidden flex flex-col space-y-4">
-          <Link 
-            href="#about" 
-            className={`nav-link ${activeSection === 'about' ? 'active-link' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            ABOUT
-          </Link>
-          <Link 
-            href="#experience" 
-            className={`nav-link ${activeSection === 'experience' ? 'active-link' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            EXPERIENCE
-          </Link>
-          <Link 
-            href="#projects" 
-            className={`nav-link ${activeSection === 'projects' ? 'active-link' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            PROJECTS
-          </Link>
-        </nav>
+        <div className="fixed inset-0 z-40 flex md:hidden pt-16 bg-black">
+          <div className="w-full flex flex-col p-6">
+            {['ABOUT', 'EXPERIENCE', 'PROJECTS'].map((item) => (
+              <Link 
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className={`py-4 text-2xl font-medium border-b border-gray-800 ${
+                  activeSection === item.toLowerCase() ? 'text-white' : 'text-gray-400'
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+        </div>
       )}
-    </header>
+    </>
   );
 };
 

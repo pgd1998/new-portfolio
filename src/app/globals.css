@@ -18,13 +18,42 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Custom link styles */
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 2px;
+/* Card hover effects */
+.group:hover .bg-gradient-to-r {
+  opacity: 1;
 }
 
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Better heading styles */
+h1, h2, h3, h4 {
+  letter-spacing: -0.025em;
+}
+
+/* Background gradients for sections */
+#about, #projects {
+  position: relative;
+}
+
+#about::before, #projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+#projects::before {
+  background: radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.05), transparent 70%);
+}
+
+/* Improved underline animation for nav links */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -32,17 +61,134 @@ body {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: currentColor;
+  background-color: white;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active-link::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.active-link::after {
-  transform: scaleX(1);
+/* Skill tag hover effect */
+.bg-white\/10 {
+  transition: all 0.2s ease;
 }
+
+.bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Social link hover animation */
+.rounded-full {
+  transition: all 0.3s ease;
+}
+
+.rounded-full:hover {
+  transform: translateY(-2px);
+}
+
+/* Project card hover effects */
+.group:hover .hover\:text-blue-400:hover {
+  color: #60a5fa;
+}
+
+/* Experience and project card styles */
+.group {
+  transition: transform 0.2s ease-in-out;
+}
+
+.group:hover {
+  transform: translateY(-2px);
+}
+
+/* Hero section blur effects */
+.blur-3xl {
+  animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  
+  100% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Mobile menu animation */
+.md\:hidden .flex-col {
+  transition: all 0.3s ease;
+}
+
+/* Button styles */
+.bg-white {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bg-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.bg-white:hover::before {
+  transform: translateX(100%);
+}
+
+/* Subtle animations for page sections on scroll */
+section {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+  animation-play-state: paused;
+}
+
+section.visible {
+  animation-play-state: running;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this script to your page.tsx component useEffect to trigger the animations */
+/* 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+    
+    return () => {
+      document.querySelectorAll('section').forEach(section => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+*/
