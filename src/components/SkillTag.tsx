@@ -4,9 +4,9 @@ type SkillTagProps = {
   name: string;
 };
 
-const SkillTag = ({ name }:SkillTagProps) => {
+const SkillTag = ({ name }: SkillTagProps) => {
   return (
-    <span className="px-3 py-1 text-sm bg-gray-800 rounded-full text-gray-300">
+    <span className="inline-block px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300">
       {name}
     </span>
   );
