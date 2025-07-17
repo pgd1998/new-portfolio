@@ -53,8 +53,8 @@ const ExperienceSection = () => {
     <>
       <ExperienceItem
         period="2023 - PRESENT"
-        title="Research Assistant (Software Developer)"
-        company="University of Melbourne"
+        title="Software Developer"
+        company="Beyond EPiC (University of Melbourne)"
         description={[
           "Led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
           "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
