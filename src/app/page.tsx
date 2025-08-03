@@ -136,7 +136,7 @@ export default function Home() {
                   that not only look great but are meticulously built for performance and usability.
                 </p>
                 <p>
-                  Currently, I&apos;m a Research Assistant (Software Developer) at the University of Melbourne, 
+                  Currently, I&apos;m a Software Developer at Beyond EPiC (backed by University of Melbourne), 
                   where I contribute to the creation and maintenance of the components that power 
                   the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best 
                   practices to deliver an inclusive user experience.

@@ -58,10 +58,12 @@ const ExperienceSection = () => {
         description={[
           "Led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
           "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
+          "Designed and implemented cloud-based architecture using AWS services, including EC2 for application hosting, S3 for static asset storage, and Lambda functions to automate data processing tasks.",
+          "Integrated SNS and SQS for reliable communication between microservices, improving system scalability and resilience",
           "Also developed Rephrame, a tool for assessing embodied carbon and water use in buildings, improving efficiency of assessments by 50%.",
           "Managed deployment and CI/CD pipelines, halving release times while ensuring system reliability."
         ]}
-        skills={["JavaScript", "Flask", "Python", "Tailwind CSS", "Plotly Dash", "REST API", "Firebase"]}
+        skills={["React","JavaScript", "Flask", "Python", "Tailwind CSS", "Plotly Dash", "REST API", "CI/CD", "Firebase"]}
       />
       
       <ExperienceItem
