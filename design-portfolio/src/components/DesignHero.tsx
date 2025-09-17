@@ -30,10 +30,10 @@ const DesignHero = () => {
         />
       )}
       
-      {/* Geometric shapes */}
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-purple-500/30 rotate-45 animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-blue-500/30 rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
-      <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+      {/* Geometric shapes - optimized with transform3d for GPU acceleration */}
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-purple-500/30 rotate-45" style={{ transform: 'rotate(45deg) translateZ(0)' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-blue-500/30 rounded-full" />
+      <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rotate-12" style={{ transform: 'rotate(12deg) translateZ(0)' }} />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="text-center">
@@ -50,31 +50,59 @@ const DesignHero = () => {
             </a>
           </div> */}
 
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-            Design
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">
+            <span className="inline-block animate-wave mr-2">👋</span> Hey there, I&apos;m Poorvith
           </h1>
+          <div className="flex items-center justify-center gap-2 text-xl md:text-2xl text-gray-400 mb-6">
+            <span>Designer & Engineer</span>
+            <span>•</span>
+            <span>📍 Melbourne, Australia</span>
+          </div>
           
           <div className="flex items-center justify-center mb-8">
             <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-24"></div>
-            <span className="mx-4 text-purple-300 font-medium">Portfolio</span>
+            <span className="mx-4 text-purple-300 font-medium">Design Portfolio</span>
             <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-24"></div>
           </div>
 
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Where engineering precision meets design innovation. Crafting digital experiences 
-            that are both <span className="text-purple-400 font-medium">beautiful</span> and 
-            <span className="text-blue-400 font-medium"> functional</span>.
-          </h2>
+          <div className="max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-center">
+              Welcome to my design playground! I&apos;m passionate about crafting digital experiences 
+              where engineering precision meets creative innovation. I specialize in 
+              <span className="text-purple-400 font-medium"> 3D web experiences</span>, 
+              <span className="text-blue-400 font-medium"> data visualization</span>, and building 
+              interfaces that are both beautiful and blazing fast.
+            </p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="flex items-center space-x-4 text-sm text-gray-400">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                Available for projects
-              </div>
-              {/* <div>•</div> */}
-              {/* <div>4 Featured Projects</div> */}
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <a 
+              href="https://poorvithgowda.com" 
+              className="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors inline-flex items-center"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l-5.882-5.882a8 8 0 1111.765 0L10 20z" />
+              </svg>
+              Software Portfolio
+            </a>
+            <a 
+              href="mailto:poorvithgowda10@gmail.com"
+              className="px-6 py-3 border border-purple-500 text-white font-medium rounded-lg hover:bg-purple-500/10 transition-colors inline-flex items-center"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Get in Touch
+            </a>
+          </div> */}
+
+          <div className="flex items-center justify-center space-x-4 text-sm text-gray-400">
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+              Available for design projects
             </div>
+            <div>•</div>
+            <div>Specializing in 3D Web & UX</div>
           </div>
         </div>
       </div>

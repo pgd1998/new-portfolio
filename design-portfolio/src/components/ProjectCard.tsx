@@ -1,9 +1,41 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ProjectCardProps } from '../types/designProject';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [shouldLoadIframe, setShouldLoadIframe] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Use Intersection Observer to detect when card is in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+        // Only load iframe when card is in view
+        if (entry.isIntersecting && !shouldLoadIframe) {
+          // Delay iframe loading to prevent all loading at once
+          setTimeout(() => setShouldLoadIframe(true), 100);
+        }
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px' 
+      }
+    );
+
+    const card = cardRef.current;
+    if (card) {
+      observer.observe(card);
+    }
+
+    return () => {
+      if (card) {
+        observer.unobserve(card);
+      }
+    };
+  }, [shouldLoadIframe]);
 
   const handleClick = () => {
     if (project.liveUrl) {
@@ -36,46 +68,60 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <div 
+      ref={cardRef}
       className="group relative cursor-pointer overflow-hidden rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
       {/* Image Container */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        {/* Fallback Gradient Background */}
-        <div className={`absolute inset-0 ${getGradientClass(project.category, project.id)} flex items-center justify-center transition-all duration-500 ${
-          isHovered && project.previewUrl ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
-        }`}>
-          <div className="text-center p-6">
-            <div className="text-white/90 text-lg font-semibold mb-2">{project.title}</div>
-            <div className="text-white/70 text-sm">{project.category}</div>
-            <div className="text-white/50 text-xs mt-2">{project.year}</div>
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+        {/* Project Preview - Load only when in view */}
+        {project.previewUrl && project.previewType === 'iframe' ? (
+          <div className="absolute inset-0">
+            {shouldLoadIframe && isInView ? (
+              <iframe 
+                src={project.previewUrl}
+                className="w-full h-full border-0"
+                style={{ 
+                  transform: 'scale(0.6)', 
+                  transformOrigin: 'top left',
+                  width: '166.67%',
+                  height: '166.67%',
+                  pointerEvents: isHovered ? 'auto' : 'none'
+                }}
+                loading="lazy"
+                title={project.title}
+              />
+            ) : (
+              // Loading placeholder with gradient
+              <div className={`absolute inset-0 ${getGradientClass(project.category, project.id)} flex items-center justify-center`}>
+                <div className="text-center p-6">
+                  <div className="text-white/90 text-2xl mb-2">🎨</div>
+                  <div className="text-white/90 text-lg font-semibold mb-2">{project.title}</div>
+                  <div className="text-white/70 text-sm">{project.category}</div>
+                </div>
+              </div>
+            )}
+            {/* Pause overlay when not hovered */}
+            {!isHovered && shouldLoadIframe && (
+              <div className="absolute inset-0 bg-black/10" />
+            )}
           </div>
-        </div>
-        
-        {/* Hover Preview */}
-        {project.previewUrl && project.previewType === 'iframe' && (
-          <div className={`absolute inset-0 transition-all duration-500 ${
-            isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-          }`}>
-            <iframe 
-              src={project.previewUrl}
-              className="w-full h-full border-0 pointer-events-none"
-              style={{ 
-                transform: 'scale(0.6)', 
-                transformOrigin: 'top left',
-                width: '166.67%',
-                height: '166.67%'
-              }}
-              loading="lazy"
-            />
+        ) : (
+          /* Fallback Gradient for projects without preview */
+          <div className={`absolute inset-0 ${getGradientClass(project.category, project.id)} flex items-center justify-center`}>
+            <div className="text-center p-6">
+              <div className="text-white/90 text-lg font-semibold mb-2">{project.title}</div>
+              <div className="text-white/70 text-sm">{project.category}</div>
+              <div className="text-white/50 text-xs mt-2">{project.year}</div>
+            </div>
           </div>
         )}
 
-        {/* Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 ${
-          isHovered ? 'opacity-90' : 'opacity-60'
+        {/* Overlay - More subtle when not hovered */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-all duration-300 ${
+          isHovered ? 'opacity-100 from-black/95' : 'opacity-90 from-black/80'
         }`} />
 
         {/* Project Info Overlay */}

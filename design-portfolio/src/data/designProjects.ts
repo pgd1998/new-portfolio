@@ -217,6 +217,43 @@ export const designProjects: DesignProject[] = [
       { label: 'Error Rate', value: '-60%' },
       { label: 'Mobile Usage', value: '80%' }
     ]
+  },
+  {
+    id: 'optimized-canvas',
+    title: 'High-Performance Canvas Renderer',
+    subtitle: 'GPU-Accelerated Graphics with 60+ FPS',
+    year: '2025',
+    category: '3D Web Experience',
+    thumbnail: '/projects/optimized-canvas-thumbnail.png',
+    previewType: 'iframe',
+    previewUrl: 'https://optimised-canvas.vercel.app/',
+    liveUrl: 'https://optimised-canvas.vercel.app/',
+    githubUrl: 'https://github.com/poorvithgowda/optimized-canvas',
+    challenge: 'Create a high-performance canvas rendering system that maintains 60+ FPS while handling complex animations and thousands of objects simultaneously.',
+    solution: 'Developed an optimized rendering pipeline using advanced canvas techniques, WebGL acceleration, and efficient memory management to achieve consistently smooth performance.',
+    process: [
+      'Performance profiling and bottleneck analysis',
+      'Implementation of spatial indexing for efficient object culling',
+      'GPU-accelerated rendering with WebGL integration',
+      'Memory pooling and object recycling strategies',
+      'Frame rate optimization and adaptive quality settings',
+      'Comprehensive performance monitoring and metrics'
+    ],
+    techStack: ['Canvas API', 'WebGL', 'TypeScript', 'React', 'Performance API', 'Web Workers'],
+    designTools: ['Chrome DevTools', 'WebGL Inspector', 'Figma'],
+    impact: 'Achieves consistent 60+ FPS performance while rendering thousands of animated objects, demonstrating mastery of browser-based graphics optimization.',
+    designDecisions: {
+      'Rendering Pipeline': 'Multi-layered canvas approach with dirty rectangle optimization for minimal redraw overhead',
+      'Memory Management': 'Object pooling and recycling to prevent garbage collection pauses',
+      'Performance Monitoring': 'Real-time FPS counter and performance metrics for transparency',
+      'Adaptive Quality': 'Dynamic quality adjustment based on device capabilities and current performance'
+    },
+    featured: true,
+    metrics: [
+      { label: 'Sustained FPS', value: '60+' },
+      { label: 'Objects Rendered', value: '10k+' },
+      { label: 'Memory Efficiency', value: '95%' }
+    ]
   }
 ];
 
