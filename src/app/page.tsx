@@ -72,7 +72,7 @@ export default function Home() {
                 
                 <ContactInfo />
                 
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-4">
                 <a 
                     href="#experience" 
                     className="px-5 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
@@ -84,6 +84,17 @@ export default function Home() {
                     className="px-5 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors"
                   >
                     View Projects
+                  </a>
+                  <a 
+                    href="https://design.poorvithgowda.com" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-md hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center space-x-2"
+                  >
+                    <span>View Design Portfolio</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
                   </a>
                   <Resume />
                 </div>
