@@ -51,7 +51,7 @@ const ProjectGrid = ({ projects, title = "Featured Projects", subtitle }: Projec
         </div>
 
         {/* Project Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           <div className="text-center p-6 bg-slate-800/50 rounded-xl border border-slate-700/50">
             <div className="text-3xl font-bold text-purple-400 mb-2">{projects.length}</div>
             <div className="text-gray-400 text-sm">Total Projects</div>
@@ -68,7 +68,7 @@ const ProjectGrid = ({ projects, title = "Featured Projects", subtitle }: Projec
             <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
             <div className="text-gray-400 text-sm">User-Centered</div>
           </div>
-        </div>
+        </div> */}
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
