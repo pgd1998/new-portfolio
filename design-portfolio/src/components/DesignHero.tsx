@@ -75,16 +75,28 @@ const DesignHero = () => {
             </p>
           </div>
 
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          {/* Action buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a 
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-all transform hover:scale-105 inline-flex items-center group"
+            >
+              <svg className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              View Resume
+            </a>
+            {/* <a 
               href="https://poorvithgowda.com" 
-              className="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors inline-flex items-center"
+              className="px-6 py-3 border border-purple-500 text-white font-medium rounded-lg hover:bg-purple-500/10 transition-colors inline-flex items-center"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l-5.882-5.882a8 8 0 1111.765 0L10 20z" />
               </svg>
               Software Portfolio
-            </a>
+            </a> */}
             <a 
               href="mailto:poorvithgowda10@gmail.com"
               className="px-6 py-3 border border-purple-500 text-white font-medium rounded-lg hover:bg-purple-500/10 transition-colors inline-flex items-center"
@@ -94,7 +106,7 @@ const DesignHero = () => {
               </svg>
               Get in Touch
             </a>
-          </div> */}
+          </div>
 
           <div className="flex items-center justify-center space-x-4 text-sm text-gray-400">
             <div className="flex items-center">
