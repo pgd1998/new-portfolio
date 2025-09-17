@@ -1,6 +1,6 @@
-import DesignHero from '@/components/DesignHero';
-import ProjectGrid from '@/components/ProjectGrid';
-import { designProjects } from '@/data/designProjects';
+import DesignHero from '../components/DesignHero';
+import ProjectGrid from '../components/ProjectGrid';
+import { designProjects } from '../data/designProjects';
 
 export default function Home() {
   return (

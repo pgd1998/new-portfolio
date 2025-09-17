@@ -38,7 +38,7 @@ const DesignHero = () => {
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="text-center">
           {/* Breadcrumb */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <a 
               href="https://poorvithgowda.com" 
               className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium inline-flex items-center group"
@@ -48,7 +48,7 @@ const DesignHero = () => {
               </svg>
               Back to Software Engineering Portfolio
             </a>
-          </div>
+          </div> */}
 
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
             Design
@@ -72,8 +72,8 @@ const DesignHero = () => {
                 <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                 Available for projects
               </div>
-              <div>•</div>
-              <div>4 Featured Projects</div>
+              {/* <div>•</div> */}
+              {/* <div>4 Featured Projects</div> */}
             </div>
           </div>
         </div>

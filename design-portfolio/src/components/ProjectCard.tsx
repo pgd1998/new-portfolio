@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { ProjectCardProps } from '@/types/designProject';
+import { ProjectCardProps } from '../types/designProject';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);

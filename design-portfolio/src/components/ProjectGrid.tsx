@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { DesignProject } from '@/types/designProject';
+import { DesignProject } from '../types/designProject';
 import ProjectCard from './ProjectCard';
 
 interface ProjectGridProps {
