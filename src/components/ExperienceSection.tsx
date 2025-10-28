@@ -56,7 +56,7 @@ const ExperienceSection = () => {
         title="Software Developer"
         company="Beyond EPiC (University of Melbourne)"
         description={[
-          "Led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
+          "Joined Beyond EPiC as a founding engineer (second employee) and led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
           "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
           "Designed and implemented cloud-based architecture using AWS services, including EC2 for application hosting, S3 for static asset storage, and Lambda functions to automate data processing tasks.",
           "Integrated SNS and SQS for reliable communication between microservices, improving system scalability and resilience",
