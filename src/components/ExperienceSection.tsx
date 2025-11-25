@@ -56,12 +56,13 @@ const ExperienceSection = () => {
         title="Software Developer"
         company="Beyond EPiC (University of Melbourne)"
         description={[
-          "Joined Beyond EPiC as a founding engineer (second employee) and led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
-          "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
-          "Designed and implemented cloud-based architecture using AWS services, including EC2 for application hosting, S3 for static asset storage, and Lambda functions to automate data processing tasks.",
-          "Integrated SNS and SQS for reliable communication between microservices, improving system scalability and resilience",
-          "Also developed Rephrame, a tool for assessing embodied carbon and water use in buildings, improving efficiency of assessments by 50%.",
-          "Managed deployment and CI/CD pipelines, halving release times while ensuring system reliability."
+          "Joined as the second employee building computational tools for environmental modeling",
+          "Led end-to-end development of Rephrame platform - architected React frontend with Python backend, handling complex embodied carbon calculations for sustainable building assessment, improving assessment efficiency by 50%",
+          "Engineered responsive frontend and scalable backend for Nested Phoenix, resulting in 30% improvement in navigation and 25% decrease in server response time",
+          "Designed and implemented cloud-based architecture using AWS services (EC2, S3, Lambda) for application hosting and automated data processing tasks",
+          "Integrated SNS and SQS for reliable microservice communication, improving system scalability and resilience",
+          "Established CI/CD pipelines and managed deployments, ensuring system reliability while halving release times",
+          "Work independently with research team to ship features from conception to production - no hand-holding, owned product and technical decisions"
         ]}
         skills={["React","JavaScript", "Flask", "Python", "Tailwind CSS", "Plotly Dash", "REST API", "CI/CD", "Firebase"]}
       />
@@ -71,9 +72,10 @@ const ExperienceSection = () => {
         title="Software Engineer"
         company="Accenture Solutions"
         description={[
-          "Spearheaded the development of a Customer Care System for a global client, reducing response time by 40% and boosting satisfaction scores by 25%.",
-          "Enhanced user experience through intuitive front-end features and optimized API performance and database scalability on the back end.",
-          "Streamlined deployment processes via CI/CD pipelines, cutting release times by 50% and improving delivery efficiency."
+          "Delivered enterprise software solutions for global clients",
+          "Spearheaded development of Customer Care System for global client, reducing response time by 40% and boosting satisfaction scores by 25%",
+          "Enhanced user experience through intuitive front-end features and optimized API performance and database scalability on the back end",
+          "Streamlined deployment processes via CI/CD pipelines, cutting release times by 50% and improving delivery efficiency"
         ]}
         skills={["JavaScript", "React", "Node", "Express", "AWS", "Tailwind", "MongoDB", "Gulp"]}
       />
@@ -83,9 +85,10 @@ const ExperienceSection = () => {
         title="Application Developer Intern"
         company="InflaMed Pty Ltd"
         description={[
-          "Developed a full-stack health-tech platform tailored for clinicians, increasing workflow efficiency by 35% and deploying securely on cloud infrastructure.",
-          "Integrated real-time healthcare data features while ensuring FHIR compliance and maintaining 99% data accuracy.",
-          "Delivered secure video consultations and live transcription, reducing documentation time by 50% and enhancing user satisfaction by 25%."
+          "Built full-stack health-tech platform for clinicians",
+          "Developed full-stack health-tech platform tailored for clinicians, increasing workflow efficiency by 35% and deploying securely on cloud infrastructure",
+          "Integrated real-time healthcare data features while ensuring FHIR compliance and maintaining 99% data accuracy",
+          "Delivered secure video consultations and live transcription, reducing documentation time by 50% and enhancing user satisfaction by 25%"
         ]}
         skills={["Next.js", "TypeScript", "Material UI", "Python", "Django", "Firebase", "AWS", "100ms", "FHIR"]}
       />

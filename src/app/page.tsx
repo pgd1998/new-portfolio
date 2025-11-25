@@ -4,7 +4,6 @@ import SocialLinks from '@/components/SocialLinks';
 import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import EducationSection from '@/components/EducationSection';
-import ContactInfo from '@/components/ContactInfo';
 import Header from '@/components/Header';
 import Resume from '@/components/Resume';
 
@@ -62,39 +61,46 @@ export default function Home() {
         <section className="min-h-[92vh] flex flex-col justify-center relative overflow-hidden px-6 py-24">
           <div className="max-w-6xl mx-auto w-full">
             <div className="relative z-10">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">Poorvith Gowda</h1>
-              <h2 className="text-xl md:text-2xl text-gray-400 mb-6">Software Engineer</h2>
-              
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">Poorvith Gowda</h1>
+              <h2 className="text-2xl md:text-3xl text-gray-300 mb-8 font-semibold">Full-Stack Software Engineer</h2>
+
               <div className="max-w-2xl">
-                <p className="text-lg md:text-xl mb-8">
-                  I build accessible, pixel-perfect digital experiences for the web.
+                <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed">
+                  I build production systems from 0→1 — from React frontends to FastAPI backends, ML pipelines to AWS infrastructure. Currently building environmental modeling tools at Beyond EPiC.
                 </p>
-                
-                <ContactInfo />
-                
+
+                <p className="text-base md:text-lg text-gray-400 mb-8">
+                  <span className="font-semibold text-white">Looking for:</span> Full-stack SWE roles at early-stage startups in Melbourne/Sydney
+                </p>
+
                 <div className="flex flex-wrap gap-4">
-                <a 
-                    href="#experience" 
+                  <a
+                    href="#experience"
                     className="px-5 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
                   >
                     View Experience
                   </a>
-                  <a 
-                    href="#projects" 
+                  <a
+                    href="#projects"
                     className="px-5 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors"
                   >
                     View Projects
                   </a>
-                  <a 
-                    href="https://design.poorvithgowda.com" 
+                  <a
+                    href="https://github.com/Poorvak"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-md hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center space-x-2"
+                    className="px-5 py-3 border border-gray-600 text-gray-300 font-medium rounded-md hover:border-gray-400 hover:text-white transition-colors"
                   >
-                    <span>View Design Portfolio</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/poorvithgowda/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3 border border-gray-600 text-gray-300 font-medium rounded-md hover:border-gray-400 hover:text-white transition-colors"
+                  >
+                    LinkedIn
                   </a>
                   <Resume />
                 </div>
@@ -138,26 +144,21 @@ export default function Home() {
                   About Me
                 </h2>
               </div>
-              
-              <div className="md:w-2/3 space-y-6">
+
+              <div className="md:w-2/3 space-y-6 text-gray-300 leading-relaxed">
                 <p>
-                  I&apos;m a software engineer passionate about creating accessible, pixel-perfect user
-                  interfaces that blend thoughtful design with robust engineering. My favorite
-                  work lies at the intersection of design and development, creating experiences
-                  that not only look great but are meticulously built for performance and usability.
+                  I&apos;m a software engineer passionate about creating accessible, well-engineered user interfaces that blend thoughtful design with robust technical implementation. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.
                 </p>
                 <p>
-                  Currently, I&apos;m a Software Developer at Beyond EPiC (backed by University of Melbourne), 
-                  where I contribute to the creation and maintenance of the components that power 
-                  the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best 
-                  practices to deliver an inclusive user experience.
+                  Currently, I&apos;m a Software Developer at <span className="text-white font-medium">Beyond EPiC</span> (backed by University of Melbourne), where I joined as the <span className="text-white font-medium">second employee</span> and have been building computational tools for environmental impact modeling. I lead development of the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best practices to deliver an inclusive user experience.
                 </p>
                 <p>
-                  In the past, I&apos;ve had the opportunity to develop software across a variety of
-                  settings — from advertising agencies and large corporations to start-ups and
-                  small digital product studios.
+                  In the past, I&apos;ve had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. This diverse experience has given me a strong foundation in building software that scales and adapts to different needs.
                 </p>
-                
+                <p>
+                  Outside of work, I&apos;m an active builder — I created <span className="text-white font-medium">F1 Intelligence</span>, a machine learning system for race predictions, and <span className="text-white font-medium">KnowHub</span>, an AI-powered knowledge management platform. I&apos;m passionate about exploring the intersection of AI, data visualization, and web technologies.
+                </p>
+
                 <EducationSection />
               </div>
             </div>
@@ -202,9 +203,57 @@ export default function Home() {
                   Projects
                 </h2>
               </div>
-              
+
               <div className="md:w-2/3 space-y-16">
                 <ProjectsSection />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA Section */}
+        <section className="px-6 py-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl"></div>
+              <div className="relative bg-black/60 p-8 md:p-12 rounded-2xl border border-gray-800">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Let&apos;s Build Something</h2>
+
+                <p className="text-lg text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">
+                  I&apos;m looking for full-stack engineering roles at early-stage startups in Melbourne or Sydney where I can contribute across the stack, make architecture decisions, and help build 0→1 products.
+                </p>
+
+                <p className="text-base text-gray-400 mb-8">
+                  Currently on 485 visa (valid until 2029)
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  <a
+                    href="mailto:poorvithgowda@gmail.com"
+                    className="px-6 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
+                  >
+                    Email Me
+                  </a>
+                  <a
+                    href="https://calendly.com/poorvithgowda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors"
+                  >
+                    Schedule Call
+                  </a>
+                  <Resume />
+                </div>
+
+                <div className="pt-6 border-t border-gray-800">
+                  <p className="text-sm text-gray-500 mb-3">Tech I&apos;m excited about right now:</p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">RAG systems</span>
+                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">AI agents</span>
+                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">Real-time data processing</span>
+                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">Vector databases</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
