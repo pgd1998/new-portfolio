@@ -54,8 +54,6 @@ const DesignHero = () => {
             <span className="inline-block animate-wave mr-2">👋</span> Hey there, I&apos;m Poorvith
           </h1>
           <div className="flex items-center justify-center gap-2 text-xl md:text-2xl text-gray-400 mb-6">
-            <span>Designer & Engineer</span>
-            <span>•</span>
             <span>📍 Melbourne, Australia</span>
           </div>
           
@@ -75,7 +73,7 @@ const DesignHero = () => {
             </p>
           </div>
 
-          {/* Action buttons */}
+          {/* Action buttons
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a 
               href="/Resume.pdf"
@@ -96,7 +94,7 @@ const DesignHero = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l-5.882-5.882a8 8 0 1111.765 0L10 20z" />
               </svg>
               Software Portfolio
-            </a> */}
+            </a> 
             <a 
               href="mailto:poorvithgowda10@gmail.com"
               className="px-6 py-3 border border-purple-500 text-white font-medium rounded-lg hover:bg-purple-500/10 transition-colors inline-flex items-center"
@@ -106,7 +104,7 @@ const DesignHero = () => {
               </svg>
               Get in Touch
             </a>
-          </div>
+          </div> */}
 
           <div className="flex items-center justify-center space-x-4 text-sm text-gray-400">
             <div className="flex items-center">
