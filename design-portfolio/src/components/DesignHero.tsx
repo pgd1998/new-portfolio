@@ -106,6 +106,8 @@ const DesignHero = () => {
             </a>
           </div> */}
 
+          
+
           <div className="flex items-center justify-center space-x-4 text-sm text-gray-400">
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
