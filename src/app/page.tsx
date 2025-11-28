@@ -6,6 +6,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import EducationSection from '@/components/EducationSection';
 import Header from '@/components/Header';
 import Resume from '@/components/Resume';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('about');
@@ -53,36 +54,69 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="min-h-screen text-white font-sans relative">
+      <AnimatedBackground />
       <Header activeSection={activeSection} />
-      
-      <main className="pt-16">
+
+      <main className="pt-16 relative z-10">
         {/* Hero Section */}
         <section className="min-h-[92vh] flex flex-col justify-center relative overflow-hidden px-6 py-24">
-          <div className="max-w-6xl mx-auto w-full">
-            <div className="relative z-10">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">Poorvith Gowda</h1>
-              <h2 className="text-2xl md:text-3xl text-gray-300 mb-8 font-semibold">Full-Stack Software Engineer</h2>
+          <div className="max-w-4xl mx-auto w-full text-center">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 gradient-text">Poorvith Gowda</h1>
+            <h2 className="text-2xl md:text-3xl mb-6 font-semibold" style={{ color: 'var(--text-primary)' }}>Full-Stack Software Engineer</h2>
 
-              <div className="max-w-2xl">
-                <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed">
-                  I build production systems from 0→1 — from React frontends to FastAPI backends, ML pipelines to AWS infrastructure. Currently building environmental modeling tools at Beyond EPiC.
-                </p>
+            <div className="max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                I build production systems from 0→1 — from React frontends to FastAPI backends, ML pipelines to AWS infrastructure. Currently building environmental modeling tools at Beyond EPiC.
+              </p>
 
-                <p className="text-base md:text-lg text-gray-400 mb-8">
-                  <span className="font-semibold text-white">Looking for:</span> Full-stack SWE roles at early-stage startups in Melbourne/Sydney
-                </p>
+              <p className="text-base md:text-lg mb-8 font-medium" style={{ color: 'var(--text-accent)' }}>
+                Looking for: Full-stack SWE roles at early-stage startups in Melbourne/Sydney
+              </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3 justify-center">
                   <a
                     href="#experience"
-                    className="px-5 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
+                    className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.15)',
+                      backdropFilter: 'blur(20px) saturate(180%)',
+                      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                      border: '1px solid rgba(255, 255, 255, 0.25)',
+                      color: '#ffffff',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.25)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.35)';
+                      e.currentTarget.style.transform = 'translateY(-1px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
                   >
                     View Experience
                   </a>
                   <a
                     href="#projects"
-                    className="px-5 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors"
+                    className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#ffffff'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                    }}
                   >
                     View Projects
                   </a>
@@ -90,7 +124,22 @@ export default function Home() {
                     href="https://github.com/Poorvak"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 border border-gray-600 text-gray-300 font-medium rounded-md hover:border-gray-400 hover:text-white transition-colors"
+                    className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#ffffff'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                    }}
                   >
                     GitHub
                   </a>
@@ -98,7 +147,22 @@ export default function Home() {
                     href="https://www.linkedin.com/in/poorvithgowda/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 border border-gray-600 text-gray-300 font-medium rounded-md hover:border-gray-400 hover:text-white transition-colors"
+                    className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#ffffff'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                    }}
                   >
                     LinkedIn
                   </a>
@@ -106,31 +170,27 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-            {/* Background Gradient */}
-            <div className="absolute top-1/4 right-0 w-1/3 h-1/2 bg-blue-500/10 blur-3xl rounded-full"></div>
-            <div className="absolute bottom-0 left-1/4 w-1/4 h-1/3 bg-purple-500/10 blur-3xl rounded-full"></div>
-          </div>
-          {/* Add this to the bottom of your hero section, just before the closing </section> tag */}
-<div className="absolute bottom-8 left-0 right-0 flex flex-col items-center text-gray-400 animate-bounce">
-  <span className="text-sm mb-2">Scroll for more</span>
-  <svg 
-    width="20" 
-    height="20" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round"
-  >
-    <path d="M12 5v14M5 12l7 7 7-7"/>
-  </svg>
-</div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center text-gray-400 animate-bounce">
+              <span className="text-sm mb-2">Scroll for more</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </div>
         </section>
         
         {/* About Section */}
-        <section id="about" className="px-6 py-24 bg-black/60">
+        <section id="about" className="px-6 py-24">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/3">
@@ -189,7 +249,7 @@ export default function Home() {
         </section>
         
         {/* Projects Section */}
-        <section id="projects" className="px-6 py-24 bg-black/60">
+        <section id="projects" className="px-6 py-24">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/3">
@@ -213,49 +273,121 @@ export default function Home() {
 
         {/* Closing CTA Section */}
         <section className="px-6 py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl"></div>
-              <div className="relative bg-black/60 p-8 md:p-12 rounded-2xl border border-gray-800">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Let&apos;s Build Something</h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">Let&apos;s Build Something</h2>
 
-                <p className="text-lg text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">
-                  I&apos;m looking for full-stack engineering roles at early-stage startups in Melbourne or Sydney where I can contribute across the stack, make architecture decisions, and help build 0→1 products.
-                </p>
+            <p className="text-lg mb-4 leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+              I&apos;m looking for full-stack engineering roles at early-stage startups in Melbourne or Sydney where I can contribute across the stack, make architecture decisions, and help build 0→1 products.
+            </p>
 
-                <p className="text-base text-gray-400 mb-8">
-                  Currently on 485 visa (valid until 2029)
-                </p>
+            <p className="text-base mb-8" style={{ color: 'var(--text-tertiary)' }}>
+              Currently on 485 visa (valid until 2029)
+            </p>
 
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  <a
-                    href="mailto:poorvithgowda@gmail.com"
-                    className="px-6 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <a
+                  href="mailto:poorvithgowda@gmail.com"
+                  className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    backdropFilter: 'blur(20px) saturate(180%)',
+                    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
+                    color: '#ffffff',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.25)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.35)';
+                    e.currentTarget.style.transform = 'translateY(-1px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  Email Me
+                </a>
+                <a
+                  href="https://calendly.com/poorvithgowda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 font-medium rounded-xl transition-all duration-200"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.06)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#ffffff'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                  }}
+                >
+                  Schedule Call
+                </a>
+                <Resume />
+              </div>
+
+              <div className="pt-6" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                <p className="text-sm mb-4 font-medium" style={{ color: 'var(--text-tertiary)' }}>Tech I&apos;m excited about right now:</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span
+                    className="px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      color: '#e5e5e7'
+                    }}
                   >
-                    Email Me
-                  </a>
-                  <a
-                    href="https://calendly.com/poorvithgowda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors"
+                    RAG systems
+                  </span>
+                  <span
+                    className="px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      color: '#e5e5e7'
+                    }}
                   >
-                    Schedule Call
-                  </a>
-                  <Resume />
-                </div>
-
-                <div className="pt-6 border-t border-gray-800">
-                  <p className="text-sm text-gray-500 mb-3">Tech I&apos;m excited about right now:</p>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">RAG systems</span>
-                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">AI agents</span>
-                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">Real-time data processing</span>
-                    <span className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full">Vector databases</span>
-                  </div>
+                    AI agents
+                  </span>
+                  <span
+                    className="px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      color: '#e5e5e7'
+                    }}
+                  >
+                    Real-time data processing
+                  </span>
+                  <span
+                    className="px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      color: '#e5e5e7'
+                    }}
+                  >
+                    Vector databases
+                  </span>
                 </div>
               </div>
-            </div>
           </div>
         </section>
       </main>

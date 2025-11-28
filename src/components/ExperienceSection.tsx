@@ -17,32 +17,51 @@ const ExperienceItem = ({
   skills,
 }: ExperienceItemProps) => {
   return (
-    <div className="group relative">
-      <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity blur"></div>
-      <div className="relative bg-black/40 p-6 rounded-lg border border-gray-800 group-hover:border-gray-700 transition-colors">
-        <div className="text-gray-400 text-sm mb-2">{period}</div>
-        <h3 className="text-xl font-semibold mb-1 flex flex-wrap items-baseline gap-x-2">
-          <span>{title}</span>
-          <span className="text-gray-400">•</span>
-          <span className="text-gray-300">{company}</span>
-        </h3>
-        
-        <div className="space-y-2 my-4">
-          {description.map((item, index) => (
-            <p key={index} className="flex items-start">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 mt-1">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-              <span>{item}</span>
-            </p>
-          ))}
-        </div>
-        
-        <div className="flex flex-wrap gap-2 mt-4">
-          {skills.map((skill, index) => (
-            <SkillTag key={index} name={skill} />
-          ))}
-        </div>
+    <div className="glass-card p-6 transition-all duration-500">
+      <div className="text-sm mb-3 font-semibold" style={{ color: 'var(--text-accent)' }}>{period}</div>
+      <h3 className="text-xl font-bold mb-1 flex flex-wrap items-baseline gap-x-2">
+        <span style={{ color: 'var(--text-primary)' }}>{title}</span>
+        <span style={{ color: 'var(--text-tertiary)' }}>•</span>
+        <span style={{ color: 'var(--text-secondary)' }}>{company}</span>
+      </h3>
+
+      <div className="space-y-3 my-5">
+        {description.map((item, index) => (
+          <p key={index} className="flex items-start text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3 mt-1 flex-shrink-0">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>{item}</span>
+          </p>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-5">
+        {skills.map((skill, index) => (
+          <span
+            key={index}
+            className="px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200"
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              color: '#e5e5e7'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+              e.currentTarget.style.color = '#e5e5e7';
+            }}
+          >
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   );

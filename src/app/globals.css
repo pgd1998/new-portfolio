@@ -1,8 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ededed;
+
+  /* iOS-Style Glass Design System */
+  /* Background */
+  --bg-primary: #000000;
+
+  /* iOS-Style Glass - LIGHT & SUBTLE */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg-hover: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-hover: rgba(255, 255, 255, 0.25);
+
+  /* iOS Card Glass - Slightly More Subtle */
+  --glass-card-bg: rgba(255, 255, 255, 0.08);
+  --glass-card-bg-hover: rgba(255, 255, 255, 0.12);
+  --glass-card-border: rgba(255, 255, 255, 0.15);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.22);
+
+  /* Accent Gradients - Kept for special elements */
+  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #6366f1 50%, #a855f7 100%);
+  --gradient-text: linear-gradient(135deg, #00d4ff 0%, #6366f1 50%, #a855f7 100%);
+
+  /* Accent Colors */
+  --accent-cyan: #00d4ff;
+  --accent-blue: #6366f1;
+  --accent-purple: #a855f7;
+
+  /* iOS Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e7;
+  --text-tertiary: #a1a1a6;
+  --text-accent: rgba(0, 212, 255, 0.9);
+
+  /* iOS-Style Shadows - SUBTLE */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  /* iOS Glass Shadow - Light and airy */
+  --glass-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  --glass-shadow-hover:
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  /* Card Shadow */
+  --card-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Border Radius - iOS Style */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @theme inline {
@@ -13,9 +74,13 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-sans);
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Card hover effects */
@@ -170,25 +235,146 @@ section.visible {
   }
 }
 
-/* Add this script to your page.tsx component useEffect to trigger the animations */
-/* 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-    
-    return () => {
-      document.querySelectorAll('section').forEach(section => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
-*/
+/* iOS-Style Glass Utility Classes */
+
+/* iOS Glass Container - Light & Airy */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-base);
+}
+
+.glass-container:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* iOS Glass Card - Subtle & Clean */
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid var(--glass-card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  background: var(--glass-card-bg-hover);
+  border-color: var(--glass-card-border-hover);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated Background */
+.animated-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.background-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.gradient-orb-1 {
+  top: 10%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  animation: float 15s ease-in-out infinite;
+}
+
+.gradient-orb-2 {
+  bottom: 10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+}
+
+/* Mobile Responsive - Reduce blur effects */
+@media (max-width: 768px) {
+  .glass-container,
+  .glass-card {
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+  }
+
+  .gradient-orb {
+    filter: blur(40px);
+  }
+
+  .gradient-orb-1,
+  .gradient-orb-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-container,
+  .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Focus states for accessibility */
+.glass-container:focus-visible,
+.glass-card:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
