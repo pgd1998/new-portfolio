@@ -5,6 +5,7 @@ type ExperienceItemProps = {
   period: string;
   title: string;
   company: string;
+  companyUrl?: string;
   description: string[];
   skills: string[];
 };
@@ -13,6 +14,7 @@ const ExperienceItem = ({
   period,
   title,
   company,
+  companyUrl,
   description,
   skills,
 }: ExperienceItemProps) => {
@@ -24,7 +26,18 @@ const ExperienceItem = ({
         <h3 className="text-xl font-semibold mb-1 flex flex-wrap items-baseline gap-x-2">
           <span>{title}</span>
           <span className="text-gray-400">•</span>
-          <span className="text-gray-300">{company}</span>
+          {companyUrl ? (
+            <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors inline-flex items-center gap-1">
+              {company}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          ) : (
+            <span className="text-gray-300">{company}</span>
+          )}
         </h3>
         
         <div className="space-y-2 my-4">
@@ -54,7 +67,8 @@ const ExperienceSection = () => {
       <ExperienceItem
         period="2023 - PRESENT"
         title="Software Developer"
-        company="Beyond EPiC (University of Melbourne)"
+        company="Beyond EPiC"
+        companyUrl="https://www.beyondepic.io/"
         description={[
           "Joined Beyond EPiC as a founding engineer (second employee) and led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
           "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
