@@ -43,7 +43,7 @@ const ExperienceItem = ({
         <div className="space-y-2 my-4">
           {description.map((item, index) => (
             <p key={index} className="flex items-start">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 mt-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 mt-1 min-w-3.5 min-h-3.5 w-3.5 h-3.5 flex-shrink-0">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
               <span>{item}</span>
@@ -70,7 +70,7 @@ const ExperienceSection = () => {
         company="Beyond EPiC"
         companyUrl="https://www.beyondepic.io/"
         description={[
-          "Joined Beyond EPiC as a founding engineer (second employee) and led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
+          "Joined Beyond EPiC as the second engineer and led development of Nested Phoenix, a computational tool supporting sustainable planning through life cycle assessment and material flow analysis.",
           "Engineered a responsive front end and a scalable back end, resulting in a 30% improvement in navigation and a 25% decrease in server response time.",
           "Designed and implemented cloud-based architecture using AWS services, including EC2 for application hosting, S3 for static asset storage, and Lambda functions to automate data processing tasks.",
           "Integrated SNS and SQS for reliable communication between microservices, improving system scalability and resilience",

@@ -59,20 +59,20 @@ export default function Home() {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="min-h-[92vh] flex flex-col justify-center relative overflow-hidden px-6 py-24">
+        <section className="min-h-[92vh] flex flex-col justify-center relative overflow-hidden px-6 py-24 -mt-12">
           <div className="max-w-6xl mx-auto w-full">
-            <div className="relative z-10">
+            <div className="relative z-10 text-center flex flex-col items-center">
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">Poorvith Gowda</h1>
               <h2 className="text-xl md:text-2xl text-gray-400 mb-6">Software Engineer</h2>
-              
-              <div className="max-w-2xl">
+
+              <div className="max-w-4xl">
                 <p className="text-lg md:text-xl mb-8">
-                  I build accessible, pixel-perfect digital experiences for the web.
+                  From early-stage startup to solo-building AI platforms, I thrive where complex problems meet clean code. Fascinated by data, AI, and building products that solve real-world problems.
                 </p>
                 
                 <ContactInfo />
                 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-nowrap justify-center gap-6">
                 <a 
                     href="#experience" 
                     className="px-5 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
@@ -124,7 +124,7 @@ export default function Home() {
         </section>
         
         {/* About Section */}
-        <section id="about" className="px-6 py-24 bg-black/60">
+        <section id="about" className="px-6 py-16 bg-black/60">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/3">
@@ -141,31 +141,44 @@ export default function Home() {
               
               <div className="md:w-2/3 space-y-6">
                 <p>
-                  I&apos;m a software engineer passionate about creating accessible, pixel-perfect user
-                  interfaces that blend thoughtful design with robust engineering. My favorite
-                  work lies at the intersection of design and development, creating experiences
-                  that not only look great but are meticulously built for performance and usability.
+                  I&apos;m a full-stack engineer who builds end-to-end products—backend systems, data pipelines, and the interfaces people actually use. I care about clean code and real-world impact.
                 </p>
                 <p>
-                  Currently, I&apos;m a Software Developer at Beyond EPiC (backed by University of Melbourne), 
-                  where I contribute to the creation and maintenance of the components that power 
-                  the Rephrame platform and Nested Phoenix, ensuring our software meets web accessibility standards and best 
-                  practices to deliver an inclusive user experience.
+                  Currently at Beyond EPiC, a University of Melbourne-backed startup, where I build sustainability tools that help measure environmental impact in buildings.
                 </p>
                 <p>
-                  In the past, I&apos;ve had the opportunity to develop software across a variety of
-                  settings — from advertising agencies and large corporations to start-ups and
-                  small digital product studios.
+                  Before this: enterprise systems at Accenture and health-tech platforms.
                 </p>
-                
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" className="px-6 py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-12">
+              <div className="md:w-1/3">
+                <h2 className="text-2xl font-bold mb-4 flex items-center">
+                  <span className="mr-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </span>
+                  Education
+                </h2>
+              </div>
+
+              <div className="md:w-2/3">
                 <EducationSection />
               </div>
             </div>
           </div>
         </section>
-        
+
         {/* Experience Section */}
-        <section id="experience" className="px-6 py-24">
+        <section id="experience" className="px-6 py-16">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/3">
@@ -188,7 +201,7 @@ export default function Home() {
         </section>
         
         {/* Projects Section */}
-        <section id="projects" className="px-6 py-24 bg-black/60">
+        <section id="projects" className="px-6 py-16 bg-black/60">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/3">
@@ -217,10 +230,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <SocialLinks />
             
-            <div className="text-sm text-gray-400">
-              <p>Built with <span className="text-white">Next.js</span> and <span className="text-white">Tailwind CSS</span>, deployed with <span className="text-white">Vercel</span></p>
+            {/* <div className="text-sm text-gray-400">
+              <p>Built with <span className="text-white">Next.js</span> and <span className="text-white">Tailwind CSS</span></p>
               <p>Coded in <span className="text-white">VS Code</span></p>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>

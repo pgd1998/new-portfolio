@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-sm text-gray-400 mb-12">
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-400 mb-12">
       <div className="flex items-center gap-2">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
