@@ -66,10 +66,7 @@ const DesignHero = () => {
           <div className="max-w-2xl mx-auto mb-8">
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-center">
               Welcome to my design playground! I&apos;m passionate about crafting digital experiences 
-              where engineering precision meets creative innovation. I specialize in 
-              <span className="text-purple-400 font-medium"> 3D web experiences</span>, 
-              <span className="text-blue-400 font-medium"> data visualization</span>, and building 
-              interfaces that are both beautiful and blazing fast.
+              where engineering precision meets creative innovation.
             </p>
           </div>
 
@@ -113,8 +110,8 @@ const DesignHero = () => {
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
               Available for design projects
             </div>
-            <div>•</div>
-            <div>Specializing in 3D Web & UX</div>
+            {/* <div>•</div>
+            <div>Specializing in 3D Web & UX</div> */}
           </div>
         </div>
       </div>
